@@ -17,7 +17,7 @@ public class IntegerToRoman {
         map.put(9, "IX");
         map.put(5, "V");
         map.put(4, "IV");
-        map.put(1, "I");
+        map.put(1, "I");;
 
         StringBuilder sb = new StringBuilder();
 
