@@ -1,7 +1,7 @@
 /**
  * Custom Queue implementation using circular array.
  */
-public class CustomQueue {
+public class CustomCircularQueue {
 
     private final int capacity;
     private final int[] queue;
@@ -9,7 +9,7 @@ public class CustomQueue {
     private int rear;
     private int size;
 
-    public CustomQueue(int capacity) {
+    public CustomCircularQueue(int capacity) {
         this.capacity = capacity;
         this.queue = new int[capacity];
         this.front = 0;
@@ -84,7 +84,7 @@ public class CustomQueue {
     /* ================= MAIN ================= */
 
     public static void main(String[] args) {
-        CustomQueue queue = new CustomQueue(5);
+        CustomCircularQueue queue = new CustomCircularQueue(5);
 
         queue.enqueue(10);
         queue.enqueue(20);
