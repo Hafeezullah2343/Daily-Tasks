@@ -89,22 +89,9 @@ public class CustomCircularQueue {
         queue.enqueue(10);
         queue.enqueue(20);
         queue.enqueue(30);
-
-        System.out.println("Queue after enqueues:");
-        queue.display();
-
-        System.out.println("Front element: " + queue.front());
-
-        System.out.println("Dequeued: " + queue.dequeue());
-        System.out.println("Queue after dequeue:");
-        queue.display();
-
         queue.enqueue(40);
-        queue.enqueue(50);
-        queue.enqueue(60); // Will show overflow
 
         System.out.println("Final Queue:");
         queue.display();
-        System.out.println("Queue size: " + queue.getSize());
     }
 }
