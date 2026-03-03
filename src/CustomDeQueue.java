@@ -24,13 +24,11 @@ public class CustomDeQueue {
             System.out.println("Queue is Full");
             return;
         }
-
         if (isEmpty()) {
             front = rear = 0;
         } else {
             front = (front - 1 + capacity) % capacity;
         }
-
         data[front] = value;
         size++;
     }
