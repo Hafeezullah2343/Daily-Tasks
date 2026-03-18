@@ -1,4 +1,4 @@
-public class ADemo {
+public class SkipSpace {
 
     private static int skipSpaces(String s) {
         int i = 0;

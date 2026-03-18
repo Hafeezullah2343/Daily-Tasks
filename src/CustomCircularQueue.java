@@ -12,8 +12,8 @@ public class CustomCircularQueue {
     public CustomCircularQueue(int capacity) {
         this.capacity = capacity;
         this.queue = new int[capacity];
-        this.front = 0;
-        this.rear = 0;
+        this.front = -1;
+        this.rear = -1;
         this.size = 0;
     }
 

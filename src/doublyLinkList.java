@@ -11,6 +11,8 @@ public class doublyLinkList {
 
         Node(int data) {
             this.data = data;
+            this.next = null;
+            this.prev = null;
         }
     }
 
@@ -114,8 +116,9 @@ public class doublyLinkList {
         }
 
         Node current = head;
-        for (int i = 0; i < pos; i++) current = current.next;
-
+        for (int i = 0; i < pos; i++) {
+            current = current.next;
+        }
         current.prev.next = current.next;
         current.next.prev = current.prev;
         size--;

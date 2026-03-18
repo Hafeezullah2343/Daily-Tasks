@@ -26,7 +26,7 @@ public class CustomSimpleQueue {
     public int dequeue() {
         if (isEmpty()) {
             System.out.println("Queue is empty");
-            return -1;
+            return 0;
         }
 
         int removed = array[front];

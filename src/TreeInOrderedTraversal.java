@@ -41,7 +41,6 @@ public class TreeInOrderedTraversal {
         node.right = new Node(30);
         node.left.left = new Node(40);
         node.left.right = new Node(50);
-        inOrder(node);
         System.out.println();
         preOrder(node);
     }

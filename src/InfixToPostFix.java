@@ -2,8 +2,9 @@ import java.util.Stack;
 
 public class InfixToPostFix {
 
-    public static int precedence(char ch) {
-        switch (ch) {
+    public static int precedence(char symbol){
+
+        switch(symbol){
             case '+':
             case '-':
                 return 1;
@@ -16,52 +17,39 @@ public class InfixToPostFix {
         return -1;
     }
 
-    public static String infixToPostfix(String infix) {
+    public static String convert(String exp){
 
         Stack<Character> stack = new Stack<>();
         StringBuilder postfix = new StringBuilder();
 
-        for (int i = 0; i < infix.length(); i++) {
-            char ch = infix.charAt(i);
+        for(int i = 0; i < exp.length(); i++){
 
-            // Operand
-            if (Character.isLetterOrDigit(ch)) {
+            char ch = exp.charAt(i);
+            if (Character.isLetterOrDigit(ch)){
                 postfix.append(ch);
-            }
-
-            // Opening bracket
-            else if (ch == '(') {
+            } else if (ch == '(') {
                 stack.push(ch);
-            }
-
-            // Closing bracket
-            else if (ch == ')') {
-                while (!stack.isEmpty() && stack.peek() != '(') {
+            }else if (ch == ')'){
+                while(!stack.isEmpty() && stack.peek() != '('){
                     postfix.append(stack.pop());
                 }
-                stack.pop(); // remove '('
-            }
-
-            // Operator
-            else {
-                while (!stack.isEmpty() &&
-                        precedence(stack.peek()) >= precedence(ch)) {
+                stack.pop();
+            }else {
+                while (!stack.isEmpty() && precedence(ch) <= precedence(stack.peek())){
                     postfix.append(stack.pop());
                 }
                 stack.push(ch);
             }
         }
-
-        // Pop remaining operators
-        while (!stack.isEmpty()) {
+        while(!stack.isEmpty()){
             postfix.append(stack.pop());
         }
-
         return postfix.toString();
     }
 
+
     public static void main(String[] args) {
-        String infix = "(A+B)*(C-D)";
-        System.out.println(infixToPostfix(infix));
+        String exp = "(A+B)*(C+D)/E+F*G)";
+        System.out.println(convert(exp));
     }
 }

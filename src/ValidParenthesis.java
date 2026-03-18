@@ -26,9 +26,15 @@ public class ValidParenthesis {
                 char top = stack.pop();
 
                 // Check matching types
-                if (c == ')' && top != '(') return false;
-                if (c == ']' && top != '[') return false;
-                if (c == '}' && top != '{') return false;
+                if (c == ')' && top != '(') {
+                    return false;
+                }
+                if (c == ']' && top != '[') {
+                    return false;
+                }
+                if (c == '}' && top != '{') {
+                    return false;
+                }
             }
         }
 

@@ -5,8 +5,6 @@
  * Insertion (beginning, end, any position), Deletion (beginning, end, any position),
  * Search, Update, Traversal, and Size check.
  *
- * Author: Your Name
- * Date: 2026-02-01
  */
 class NodeS {
 
@@ -138,6 +136,7 @@ public class SinglyLinkedList {
             deleteAtBeginning();
             return;
         }
+
 
         Node current = head;
         while (current.next != null && current.next.data != value) {
